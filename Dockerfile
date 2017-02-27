@@ -1,4 +1,4 @@
-FROM node:6.9.1
+FROM node:7
 
 ENV APP_DIR=/opt/angular-tour-of-heroes/
 
@@ -7,7 +7,7 @@ ENV APP_DIR=/opt/angular-tour-of-heroes/
 COPY package.json /tmp/package.json
 RUN cd /tmp && npm install \
 	# && npm i -g lite-server typescript concurrently @types/core-js @types/node @angular/core
-	&& npm i -g @angular/core
+	&& npm i -g @angular/core lite-server
 
 WORKDIR ${APP_DIR}
 
